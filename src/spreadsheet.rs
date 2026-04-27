@@ -75,9 +75,9 @@ impl Spreadsheet {
         y: u16,
         formula: CellFormula,
     ) -> () {
-        let index = hash(x, y); // 65537
+        let index = hash(x, y);
 
-        let dependencies = self.cell_dependencies(&formula); // { 0 }
+        let dependencies = self.cell_dependencies(&formula);
         dbg!(&dependencies);
 
         if let Some(old) = self.cell_arena.insert(
